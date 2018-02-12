@@ -1,0 +1,29 @@
+
+
+module tpcorba {
+
+  module exo2 {
+
+        exception divisionParZero {};
+
+
+        interface calcul  {
+
+                readonly attribute double memoire;
+
+                void ajouteMemoire(in double data);
+                void soustraitMemoire(in double data);
+                void multiplieMemoire(in double data);
+                void MiseAZero();                               
+                
+                
+                void diviseMemoire(in double donnee) raises (divisionParZero); 
+
+                void incrementer(inout long data);
+                void decrementer(inout long data);
+
+        };
+  };
+};
+
+
