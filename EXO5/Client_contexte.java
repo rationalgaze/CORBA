@@ -9,9 +9,6 @@ import java.lang.*;
 import java.util.*;
 import java.io.*;
 
-
-
-
 public class Client_contexte
 	{
 
@@ -45,16 +42,13 @@ public class Client_contexte
 
 		NamingContext nc = NamingContextHelper.narrow(obj);
 		if(nc == null)
-			{
+		{
 			System.out.println("Reference type nil sur `NameService'");
 			System.exit(1);
-			}
+		}
 
-    
  		try
-                	{
-
-
+  	{
 			// LIAISON 1
 			//
 			NameComponent[] l1Name = new NameComponent[1];
@@ -62,7 +56,6 @@ public class Client_contexte
 			l1Name[0].id = "etudiant1";
 			l1Name[0].kind = "article";
 			obj1=nc.resolve(l1Name);
-
 
 			// LIAISON 1 bis
 			//
@@ -72,10 +65,8 @@ public class Client_contexte
 			l1bisName[0].kind = "";
 			org.omg.CORBA.Object nc1Obj = nc.resolve(l1bisName);
 			NamingContext nc1 = NamingContextHelper.narrow(nc1Obj);
-			if(nc1 == null)
-			throw new RuntimeException();
+			if(nc1 == null)	throw new RuntimeException();
 			obj1 = nc1.resolve(l1Name);
-
 
 			// LIAISON 2
 			//
@@ -84,7 +75,6 @@ public class Client_contexte
 			l2Name[0].id = "etudiant2";
 			l2Name[0].kind = "article";
 			obj2 = nc1.resolve(l2Name);
-
 
 			// LIAISON 3
 			//
@@ -100,13 +90,11 @@ public class Client_contexte
 			l3Name[2].kind = "article";
 			obj3 = nc.resolve(l3Name);
 
-
 			// LIAISON 4
 			//
 			l3Name[2].id = "etudiant4";
 			l3Name[2].kind = "article";
 			obj4 = nc.resolve(l3Name);
-
 
 			// LIAISON 5
 			//

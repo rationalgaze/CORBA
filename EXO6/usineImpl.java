@@ -9,20 +9,18 @@ import org.omg.PortableServer.*;
 
 
 public class usineImpl extends usinePOA
-	{
-
+{
 
 	private POA poa_;
 
-
 	public usineImpl(POA poa)
-		{
+	{
 		poa_=poa;
-		}
+	}
 
 
-        public etudiant inscription_d_un_etudiant(String nom, String prenom)
-		{
+  public etudiant inscription_d_un_etudiant(String nom, String prenom)
+	{
 
 		etudiant e=null;
 
