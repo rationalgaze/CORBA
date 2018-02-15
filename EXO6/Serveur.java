@@ -26,26 +26,34 @@ public class Serveur
   	             	org.omg.CORBA.Object refus  = poa.servant_to_reference(us);
 
 			org.omg.CORBA.Object obj = null;
-	               	obj = orb.resolve_initial_references("NameService");
+     	obj = orb.resolve_initial_references("NameService");
        			if(obj == null)
 				{
 				System.out.println("Reference nil sur `NameService'");
 				System.exit(1);
 				}
 
+			// le client construit une souche à partir de la référence 
+			// d'objet CORBA afin de pouvoir invoquer le serveur de 
+			// désignation. Avec la souche ainsi construite toutes les 
+			// méthodes de l'interface "NamingContext" sont accessibles
 			NamingContext nc = NamingContextHelper.narrow(obj);
 			if(nc == null)
-				{
+			{
 				System.out.println("Reference type nil sur `NameService'");
 				System.exit(1);
-				}
+			}
 
+			// On construit le nom symbolique de l'objet à invoquer
+			// (initialisation d'un tableau de "NameComponent")
+			// Le nom symbolique est celui de l'objet APPLICATIF, instancié
+			// par "Serveur.java"
 			NameComponent[] aName = new NameComponent[1];
 		       	aName[0] = new NameComponent();
 		       	aName[0].id = "formations professionnelles";
 		       	aName[0].kind = "usine";
 
-          		nc.rebind(aName, refus);
+          	nc.rebind(aName, refus);
 
 			System.out.println("Le serveur est pret ");
 			orb.run();

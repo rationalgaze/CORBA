@@ -69,8 +69,8 @@ public class Client
 		       	aName[0].kind = "donnee";
 
 			// ETAPE 4
-			//On invoque le serveur de désignation, en retour, on reçoit
-			// une référence d'objet CORBA "non typ"e" sur l'objet que l'on
+			// On invoque le serveur de désignation, en retour, on reçoit
+			// une référence d'objet CORBA "non typée" sur l'objet que l'on
 			// souhaite invoquer. Par l'opération "resolve", le serveur de 
 			// désignation recherche l'association "référence d'objet" nom symbolique 
 			obj=nc.resolve(aName);
@@ -90,9 +90,6 @@ public class Client
 	   	System.out.println("NotFound sur resolve");
 	   	System.exit(1);
 		}
-
-
-
 
 		// ETAPE 5
 		// le Client construit une souche à partir de la référence 

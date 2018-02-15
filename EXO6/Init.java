@@ -46,14 +46,12 @@ public class Init
 		// RACINE
 		try
 		{
-
 			NameComponent[] aName = new NameComponent[1];
 			aName[0] = new NameComponent();
 			aName[0].id = "formations professionnelles";
 			aName[0].kind = "usine";
 
 			obj=nc.resolve(aName);
-
 		}
 		catch(CannotProceed ex)
 		{
@@ -97,27 +95,18 @@ public class Init
 			ncDESS[0] = new NameComponent();
 			ncDESS[0].id = "DESS";
 			ncDESS[0].kind = "";
-			org.omg.CORBA.Object dessObj = nc.resolve(ncDESS);
-			NamingContext dess = NamingContextHelper.narrow(dessObj);
-			if(dess == null)	throw new RuntimeException();
 			obj=nc.resolve(ncDESS);
 			
 			NameComponent[] ncIUP = new NameComponent[1];
 			ncIUP[0] = new NameComponent();
 			ncIUP[0].id = "IUP";
 			ncIUP[0].kind = "";
-			org.omg.CORBA.Object iupObj = nc.resolve(ncIUP);
-			NamingContext iup = NamingContextHelper.narrow(iupObj);
-			if(iup == null)	throw new RuntimeException();
 			obj=nc.resolve(ncIUP);
 			
 			NameComponent[] ncEffectif = new NameComponent[1];
 			ncEffectif[0] = new NameComponent();
 			ncEffectif[0].id = "Effectif";
 			ncEffectif[0].kind = "";
-			org.omg.CORBA.Object effObj = nc.resolve(ncEffectif);
-			NamingContext eff = NamingContextHelper.narrow(effObj);
-			if(eff == null)	throw new RuntimeException();
 			obj=nc.resolve(ncIUP);
 			
 			// NameComponent[] a1Name = new NameComponent[1];
