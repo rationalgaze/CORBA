@@ -50,7 +50,7 @@ public class Client_contexte
  		try
   	{
 			// LIAISON 1
-			//
+			// absolue
 			NameComponent[] l1Name = new NameComponent[1];
 			l1Name[0] = new NameComponent();
 			l1Name[0].id = "etudiant1";
@@ -58,7 +58,7 @@ public class Client_contexte
 			obj1=nc.resolve(l1Name);
 
 			// LIAISON 1 bis
-			//
+			// RELATIVE
 			NameComponent[] l1bisName = new NameComponent[1];
 			l1bisName[0] = new NameComponent();
 			l1bisName[0].id = "contexte1";
@@ -69,7 +69,7 @@ public class Client_contexte
 			obj1 = nc1.resolve(l1Name);
 
 			// LIAISON 2
-			//
+			// RELATIVE
 			NameComponent[] l2Name = new NameComponent[1];
 			l2Name[0] = new NameComponent();
 			l2Name[0].id = "etudiant2";
@@ -77,7 +77,7 @@ public class Client_contexte
 			obj2 = nc1.resolve(l2Name);
 
 			// LIAISON 3
-			//
+			// ABSOLUE
 			NameComponent[] l3Name = new NameComponent[3];
 			l3Name[0] = new NameComponent();
 			l3Name[0].id = "contexte1";
@@ -91,13 +91,13 @@ public class Client_contexte
 			obj3 = nc.resolve(l3Name);
 
 			// LIAISON 4
-			//
+			// ABSOLUE
 			l3Name[2].id = "etudiant4";
 			l3Name[2].kind = "article";
 			obj4 = nc.resolve(l3Name);
 
 			// LIAISON 5
-			//
+			// RELATIVE
 			NameComponent[] l5Name = new NameComponent[1];
 			l5Name[0] = new NameComponent();
 			l5Name[0].id = "contexte3";
