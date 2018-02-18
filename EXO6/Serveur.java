@@ -23,15 +23,17 @@ public class Serveur
 
 
 			usineImpl us = new usineImpl(poa);
-  	             	org.omg.CORBA.Object refus  = poa.servant_to_reference(us);
+     	org.omg.CORBA.Object refus  = poa.servant_to_reference(us);
+
+
 
 			org.omg.CORBA.Object obj = null;
      	obj = orb.resolve_initial_references("NameService");
-       			if(obj == null)
-				{
+ 			if(obj == null)
+			{
 				System.out.println("Reference nil sur `NameService'");
 				System.exit(1);
-				}
+			}
 
 			// le client construit une souche à partir de la référence 
 			// d'objet CORBA afin de pouvoir invoquer le serveur de 
@@ -53,11 +55,10 @@ public class Serveur
 		       	aName[0].id = "formations professionnelles";
 		       	aName[0].kind = "usine";
 
-          	nc.rebind(aName, refus);
+      nc.rebind(aName, refus);
 
 			System.out.println("Le serveur est pret ");
 			orb.run();
-      
   
 			System.exit(0);
 		}

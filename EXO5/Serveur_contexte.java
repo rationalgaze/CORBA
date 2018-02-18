@@ -42,18 +42,18 @@ public class Serveur_contexte
 			org.omg.CORBA.Object obj = null;
 			obj = orb.resolve_initial_references("NameService");
 			if(obj == null)
-				{
+			{
 				System.out.println("Reference nil sur `NameService'");
 				System.exit(1);
-				}
+			}
 
 
 			NamingContext nc = NamingContextHelper.narrow(obj);
 			if(nc == null)
-				{
+			{
 			 	System.out.println("Reference type nil sur `NameService'");
 			 	System.exit(1);
-				}
+			}
 
 
 			NameComponent[] nc1Name = new NameComponent[1];

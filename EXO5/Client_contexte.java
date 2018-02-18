@@ -23,20 +23,20 @@ public class Client_contexte
 				obj4 = null, obj5 = null;
 
  		try
-                	{
+  	{
 			obj = orb.resolve_initial_references("NameService");
-                	}
-                catch(org.omg.CORBA.ORBPackage.InvalidName ex)
-                	{
-                    	System.out.println("'NameService' inaccessible");
-                    	System.exit(1);
-                	}
+  	}
+    catch(org.omg.CORBA.ORBPackage.InvalidName ex)
+  	{
+      	System.out.println("'NameService' inaccessible");
+      	System.exit(1);
+  	}
 
-       		if(obj == null)
-		    	{
+ 		if(obj == null)
+  	{
 			System.out.println("Reference nil sur `NameService'");
 			System.exit(1);
-		    	}
+  	}
 
 
 
@@ -181,4 +181,3 @@ public class Client_contexte
 		System.exit(0);
 		}
 	}
-
